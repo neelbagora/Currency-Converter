@@ -1,5 +1,3 @@
-package com.beyondbell.currencyconverter;
-
 import javafx.application.Application;
 import javafx.stage.Stage;
 
