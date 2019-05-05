@@ -9,4 +9,4 @@ import io.ktor.client.request.get
  */
 internal suspend fun requestLatestRates(date: String = "latest") = client.get<LatestRatesResponse>("$API/$date")
 
-suspend fun main() = println(requestLatestRates())
+suspend fun main() = println(requestLatestRates(/* "2018-01-01" */))
