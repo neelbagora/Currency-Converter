@@ -24,11 +24,11 @@ dependencies {
 
 javafx {
     version = "12.0.1"
-    modules = listOf("javafx.controls")
+    modules = listOf("javafx.fxml", "javafx.controls")
 }
 
 configure<JavaPluginConvention> {
-    sourceCompatibility = JavaVersion.VERSION_HIGHER
+    sourceCompatibility = JavaVersion.VERSION_12
 }
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "12"
