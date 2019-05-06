@@ -69,11 +69,11 @@
                <font>
                   <Font size="13.0" />
                </font></TextField>
-            <TextField editable="false" layoutX="23.0" layoutY="40.0" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: 1111;" text="Currency I have:" />
-            <TextField editable="false" layoutX="495.0" layoutY="40.0" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: 11111;" text="Currency I want:" />
+            <TextField editable="false" layoutX="23.0" layoutY="40.0" prefHeight="26.0" prefWidth="76.0" style="-fx-background-color: 1111;" text="Currency 1:" />
+            <TextField editable="false" layoutX="521.0" layoutY="40.0" prefHeight="26.0" prefWidth="76.0" style="-fx-background-color: 11111;" text="Currency 2:" />
             <TextArea layoutX="23.0" layoutY="146.0" prefHeight="26.0" prefWidth="192.0" />
             <TextArea layoutX="405.0" layoutY="146.0" prefHeight="26.0" prefWidth="192.0" />
-            <TextField editable="false" layoutX="528.0" layoutY="123.0" prefHeight="26.0" prefWidth="69.0" style="-fx-background-color: 1111;" text="Amount:" />
+            <TextField editable="false" layoutX="536.0" layoutY="123.0" prefHeight="26.0" prefWidth="61.0" style="-fx-background-color: 1111;" text="Amount:" />
             <TextField editable="false" layoutX="23.0" layoutY="123.0" prefHeight="26.0" prefWidth="69.0" style="-fx-background-color: 1111;" text="Amount:" />
           <TextField editable="false" layoutX="260.0" layoutY="191.0" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: 1111;" text="Recent Trends:" />
           <LineChart layoutX="168.0" layoutY="204.0" prefHeight="165.0" prefWidth="254.0">
