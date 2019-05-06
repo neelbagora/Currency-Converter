@@ -4,5 +4,10 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 internal data class LatestRates(
-	val EUR: Double
+	val EUR: Double,
+	val USD: Double
 )
+
+suspend fun main() {
+	println(requestLatestRates())
+}
