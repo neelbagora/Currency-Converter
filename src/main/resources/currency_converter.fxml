@@ -1,8 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.beyondbell.currencyconverter.CurrencyConverter">
-
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8fb6da" height="389.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="650.0" />
+      <TextField editable="false" layoutX="225.0" layoutY="24.0" prefHeight="29.0" prefWidth="192.0" style="-fx-background-color: 1111;" text="Real Time Currency Converter">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <TextField editable="false" layoutX="32.0" layoutY="53.0" prefHeight="26.0" prefWidth="76.0" style="-fx-background-color: 1111;" text="Currency 1:" />
+      <ChoiceBox layoutX="40.0" layoutY="79.0" prefHeight="25.0" prefWidth="124.0" />
+      <ChoiceBox layoutX="484.0" layoutY="79.0" prefHeight="25.0" prefWidth="124.0" />
+      <TextField editable="false" layoutX="532.0" layoutY="53.0" prefHeight="26.0" prefWidth="76.0" style="-fx-background-color: 11111;" text="Currency 2:" />
+      <TextArea layoutX="40.0" layoutY="140.0" prefHeight="26.0" prefWidth="192.0" />
+      <TextField editable="false" layoutX="36.0" layoutY="114.0" prefHeight="26.0" prefWidth="69.0" style="-fx-background-color: 1111;" text="Amount:" />
+      <TextArea layoutX="417.0" layoutY="140.0" prefHeight="26.0" prefWidth="192.0" />
+      <TextField editable="false" layoutX="546.0" layoutY="114.0" prefHeight="26.0" prefWidth="69.0" style="-fx-background-color: 1111;" text="Amount:" />
+      <LineChart layoutX="194.0" layoutY="202.0" prefHeight="165.0" prefWidth="254.0" title="Recent Trends">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis side="LEFT" />
+         </yAxis>
+      </LineChart>
+      <TextField editable="false" layoutX="470.0" layoutY="367.0" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: 1111;" text="Last Updated: " />
+      <TextField editable="false" layoutX="557.0" layoutY="367.0" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: 1111;" text="null" />
+   </children>
 </AnchorPane>
