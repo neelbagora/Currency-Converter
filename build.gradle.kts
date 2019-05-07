@@ -4,6 +4,7 @@ plugins {
     kotlin("jvm") version "1.3.31"
     id("kotlinx-serialization") version "1.3.31"
     id("org.openjfx.javafxplugin") version "0.0.7"
+    application
 }
 
 group = "com.beyondbell"
@@ -25,6 +26,10 @@ dependencies {
 javafx {
     version = "12.0.1"
     modules = listOf("javafx.fxml", "javafx.controls")
+}
+
+application {
+    mainClassName = "com.beyondbell.currencyconverter.CurrencyConverterKt"
 }
 
 configure<JavaPluginConvention> {
