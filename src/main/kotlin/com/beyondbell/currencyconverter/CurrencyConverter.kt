@@ -57,31 +57,50 @@ internal class CurrencyConverter : Application() {
 	}
 
 	fun handleTextFieldOne(keyEvent: KeyEvent) {
-		val field = keyEvent.target as TextField
+		val field = textfield1
 		if (field.text.toDoubleOrNull() == null || keyEvent.character == "d" || keyEvent.character == "f") {
 			field.text = field.text.dropLast(1)
 			field.positionCaret(field.text.length)
 		} else {
-			TODO()
+			updateOutput()
 		}
 	}
 
 	fun handleTextFieldTwo(keyEvent: KeyEvent) {
-		val field = keyEvent.target as TextField
+		val field = textfield2
 		if (field.text.toDoubleOrNull() == null || keyEvent.character == "d" || keyEvent.character == "f") {
 			field.text = field.text.dropLast(1)
 			field.positionCaret(field.text.length)
 		} else {
-			TODO()
+			updateInput()
 		}
 	}
 
+	private fun updateInput() {
+		val output = textfield2.text.toIntOrNull() ?: 1
+		val ratio = graph.data.first().data.last().YValueProperty().get()
+		textfield1.text = (output / ratio).toString()
+	}
+
+	private fun updateOutput() {
+		val input = textfield1.text.toIntOrNull() ?: 1
+		val ratio = graph.data.first().data.last().YValueProperty().get()
+		textfield2.text = (input * ratio).toString()
+	}
+
+
 	fun handleChoiceBoxOne() {
 		handleChoiceBox()
+		if (graph.data.firstOrNull()?.data?.lastOrNull() != null) {
+			updateOutput()
+		}
 	}
 
 	fun handleChoiceBoxTwo() {
 		handleChoiceBox()
+		if (graph.data.firstOrNull()?.data?.lastOrNull() != null) {
+			updateInput()
+		}
 	}
 
 	private fun handleChoiceBox() {
