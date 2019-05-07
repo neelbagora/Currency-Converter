@@ -22,6 +22,7 @@ internal class CurrencyConverter : Application() {
 		println(field.text)
 		if (field.text.toDoubleOrNull() == null) {
 			field.text = field.text.dropLast(1)
+			field.positionCaret(field.text.length)
 		}
 	}
 }
