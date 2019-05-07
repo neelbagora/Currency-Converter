@@ -20,15 +20,15 @@ internal object CurrencyData {
 				"-${day.toString().padStart(2, '0')}")
 	}
 
-	operator fun get(year: Year = this.year) = data.getOrPut(year) {
-		if (year == this.year) {
+	operator fun get(yearsBack: Int = 0) = data.getOrPut(year - yearsBack) {
+		if (yearsBack == 0) {
 			runBlocking {
 				requestRates()
 			}
 		} else {
 			runBlocking {
 				requestRates(
-					year.toString().padStart(4, '0') +
+					(year - yearsBack).toString().padStart(4, '0') +
 							"-${month.toString().padStart(2, '0')}" +
 							"-${day.toString().padStart(2, '0')}"
 				)
