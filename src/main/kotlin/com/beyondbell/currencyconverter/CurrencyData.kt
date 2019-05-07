@@ -14,7 +14,7 @@ internal object CurrencyData {
 
 	private val data = HashMap<Year, Rates>()
 
-	operator fun get(yearsBack: Int = 0) = data.getOrPut(year - yearsBack) {
+	operator fun get(yearsBack: Int = 0) = Pair(data.getOrPut(year - yearsBack) {
 		if (yearsBack == 0) {
 			runBlocking {
 				requestRates()
@@ -28,5 +28,5 @@ internal object CurrencyData {
 				)
 			}
 		}
-	}
+	}, year - yearsBack)
 }
