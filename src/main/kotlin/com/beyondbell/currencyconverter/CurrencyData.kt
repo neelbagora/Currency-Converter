@@ -20,7 +20,7 @@ internal object CurrencyData {
 				"-${day.toString().padStart(2, '0')}")
 	}
 
-	operator fun get(year: Year) = data.getOrPut(year) {
+	operator fun get(year: Year = this.year) = data.getOrPut(year) {
 		if (year == this.year) {
 			runBlocking {
 				requestRates()
