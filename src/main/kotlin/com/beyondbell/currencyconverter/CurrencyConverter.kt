@@ -79,7 +79,7 @@ internal class CurrencyConverter : Application() {
 	private fun updateInput() {
 		val output = textfield2.text.toDoubleOrNull() ?: 1.0
 		val ratio = graph.data.first().data.last().YValueProperty().get()
-		textfield1.text = (output / ratio).toString()
+		textfield1.text = (output * ratio).toString()
 	}
 
 	private fun updateOutput() {
