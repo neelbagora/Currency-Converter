@@ -40,7 +40,7 @@ internal class CurrencyConverter : Application() {
 
 	lateinit var choicebox1: ChoiceBox<String>
 	fun loadChoiceBoxOne() {
-		
+
 	}
 
 	lateinit var choicebox2: ChoiceBox<String>
