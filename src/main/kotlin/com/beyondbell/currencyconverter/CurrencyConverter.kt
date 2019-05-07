@@ -82,13 +82,13 @@ internal class CurrencyConverter : Application() {
 	}
 
 	private fun updateInput() {
-		val output = textfield2.text.toDoubleOrNull() ?: 1.0
+		val output = textfield2.text.toDouble()
 		val ratio = graph.data.first().data.last().YValueProperty().get()
 		textfield1.text = (output * ratio).toString()
 	}
 
 	private fun updateOutput() {
-		val input = textfield1.text.toDoubleOrNull() ?: 1.0
+		val input = textfield1.text.toDouble()
 		val ratio = graph.data.first().data.last().YValueProperty().get()
 		textfield2.text = (input * ratio).toString()
 	}
