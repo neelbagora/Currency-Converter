@@ -97,7 +97,7 @@ internal class CurrencyConverter : Application() {
 	fun handleChoiceBoxOne() {
 		handleChoiceBox()
 		if (graph.data.firstOrNull()?.data?.lastOrNull() != null) {
-			updateInput()
+			updateOutput()
 		}
 	}
 
@@ -105,7 +105,7 @@ internal class CurrencyConverter : Application() {
 	fun handleChoiceBoxTwo() {
 		handleChoiceBox()
 		if (graph.data.firstOrNull()?.data?.lastOrNull() != null) {
-			updateOutput()
+			updateInput()
 		}
 	}
 
