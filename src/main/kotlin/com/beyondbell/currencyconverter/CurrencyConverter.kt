@@ -18,7 +18,12 @@ import kotlinx.coroutines.launch
 import kotlin.reflect.full.declaredMemberProperties
 import kotlin.reflect.full.memberProperties
 
-fun main() = Application.launch(CurrencyConverter::class.java)
+internal var key = ""
+
+fun main(args: Array<String>) {
+	key = args.first()
+	Application.launch(CurrencyConverter::class.java)
+}
 
 internal class CurrencyConverter : Application() {
 	lateinit var textfield1: TextField
