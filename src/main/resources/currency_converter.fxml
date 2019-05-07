@@ -30,6 +30,6 @@
             <NumberAxis side="LEFT" />
         </yAxis>
     </LineChart>
-    <TextField fx:id="textfield1" layoutX="40.0" layoutY="134.0" onKeyTyped="#handleTextFieldOne" promptText="0.0" />
-    <TextField fx:id="textfield2" layoutX="458.0" layoutY="134.0" onKeyTyped="#handleTextFieldTwo" promptText="0.0" />
+    <TextField fx:id="textfield1" layoutX="40.0" layoutY="134.0" onKeyTyped="#handleTextFieldOne" text="1.0" />
+    <TextField fx:id="textfield2" layoutX="458.0" layoutY="134.0" onKeyTyped="#handleTextFieldTwo" text="1.0" />
 </AnchorPane>
