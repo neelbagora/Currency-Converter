@@ -81,14 +81,14 @@ internal class CurrencyConverter : Application() {
 
 	@Synchronized
 	private fun updateInput() {
-		val output = textfield2.text.toIntOrNull() ?: 1
+		val output = textfield2.text.toDoubleOrNull() ?: 1.0
 		val ratio = graph.data.first().data.last().YValueProperty().get()
 		textfield1.text = (output / ratio).toString()
 	}
 
 	@Synchronized
 	private fun updateOutput() {
-		val input = textfield1.text.toIntOrNull() ?: 1
+		val input = textfield1.text.toDoubleOrNull() ?: 1.0
 		val ratio = graph.data.first().data.last().YValueProperty().get()
 		textfield2.text = (input * ratio).toString()
 	}
