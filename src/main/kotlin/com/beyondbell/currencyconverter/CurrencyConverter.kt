@@ -4,10 +4,8 @@ import javafx.application.Application
 import javafx.fxml.FXMLLoader
 import javafx.scene.Scene
 import javafx.scene.control.TextField
+import javafx.scene.input.KeyEvent
 import javafx.stage.Stage
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 fun main() = Application.launch(CurrencyConverter::class.java)
 
@@ -19,10 +17,11 @@ internal class CurrencyConverter : Application() {
 
 	lateinit var textfield1: TextField
 
-	init {
-		GlobalScope.launch {
-			delay(500)
-			println(this@CurrencyConverter::textfield1.isInitialized)
+	fun handleTextFieldOne(keyEvent: KeyEvent) {
+		val field = keyEvent.target as TextField
+		println(field.text)
+		if (field.text.toDoubleOrNull() == null) {
+			field.text = field.text.dropLast(1)
 		}
 	}
 }
