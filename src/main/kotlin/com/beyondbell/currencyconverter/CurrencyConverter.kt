@@ -2,7 +2,6 @@ package com.beyondbell.currencyconverter
 
 import com.beyondbell.currencyconverter.api.rates.Rates
 import javafx.application.Application
-import javafx.event.ActionEvent
 import javafx.fxml.FXMLLoader
 import javafx.scene.Scene
 import javafx.scene.chart.LineChart
@@ -77,18 +76,34 @@ internal class CurrencyConverter : Application() {
 		}
 	}
 
-	fun handleChoiceBoxOne(actionEvent: ActionEvent) {
-		val input = currency1.value
-		val output = currency2.value
-
-		repeat(10) {
-			val data = CurrencyData[it]
-			graph.data.add(XYChart.Series(data.second.toString(), data.first::class.memberProperties))
-		}
+	fun handleChoiceBoxOne() {
+		handleChoiceBox()
 	}
 
-	fun handleChoiceBoxTwo(actionEvent: ActionEvent) {
-		val input = currency1.value
-		val output = currency2.value
+	fun handleChoiceBoxTwo() {
+		handleChoiceBox()
+	}
+
+	private fun handleChoiceBox() {
+		val input = currency1.value.also { println(it) }
+		val output = currency2.value.also { println(it) }
+
+		if (input == null || output == null) return
+
+		val series = graph.data.firstOrNull() ?: run {
+			val series = XYChart.Series<String, Double>()
+			graph.data.add(series)
+			series
+		}
+
+		series.data.clear()
+		repeat(10) {
+			val data = CurrencyData[9 - it]
+			val reflectedGetters = data.first::class.memberProperties
+			val reflectedInput = reflectedGetters.first { it.name == input }.getter.call(data.first) as Double
+			val reflectedOutput = reflectedGetters.first { it.name == output }.getter.call(data.first) as Double
+			val ratio = reflectedInput / reflectedOutput
+			series.data.add(XYChart.Data(data.second.toString(), ratio))
+		}
 	}
 }
