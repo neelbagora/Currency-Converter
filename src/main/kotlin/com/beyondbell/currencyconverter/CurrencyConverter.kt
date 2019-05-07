@@ -90,7 +90,7 @@ internal class CurrencyConverter : Application() {
 	private fun updateOutput() {
 		val input = textfield1.text.toDouble()
 		val ratio = graph.data.first().data.last().YValueProperty().get()
-		textfield2.text = (input * ratio).toString()
+		textfield2.text = (input / ratio).toString()
 	}
 
 	fun handleChoiceBoxOne() {
