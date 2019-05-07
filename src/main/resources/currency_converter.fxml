@@ -8,34 +8,28 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.beyondbell.currencyconverter.CurrencyConverter">
-    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8fb6da" height="389.0" layoutY="14.0" stroke="BLACK"
-               strokeType="INSIDE" width="650.0"/>
-    <TextField editable="false" layoutX="225.0" layoutY="24.0" prefHeight="29.0" prefWidth="192.0"
-               style="-fx-background-color: 1111;" text="Real Time Currency Converter">
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.beyondbell.currencyconverter.CurrencyConverter">
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8fb6da" height="389.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="650.0" />
+    <TextField editable="false" layoutX="225.0" layoutY="24.0" prefHeight="29.0" prefWidth="192.0" style="-fx-background-color: 1111;" text="Real Time Currency Converter">
         <font>
-            <Font size="13.0"/>
+            <Font size="13.0" />
         </font>
     </TextField>
-    <TextField editable="false" layoutX="32.0" layoutY="53.0" prefHeight="26.0" prefWidth="76.0"
-               style="-fx-background-color: 1111;" text="Currency 1:"/>
-    <ChoiceBox fx:id="currency1" onAction="#handleChoiceBoxOne" layoutX="40.0" layoutY="79.0" prefHeight="25.0" prefWidth="124.0"/>
-    <ChoiceBox fx:id="currency2" onAction="#handleChoiceBoxTwo" layoutX="484.0" layoutY="79.0" prefHeight="25.0" prefWidth="124.0"/>
-    <TextField editable="false" layoutX="532.0" layoutY="53.0" prefHeight="26.0" prefWidth="76.0"
-               style="-fx-background-color: 11111;" text="Currency 2:"/>
-    <TextField editable="false" layoutX="36.0" layoutY="114.0" prefHeight="26.0" prefWidth="69.0"
-               style="-fx-background-color: 1111;" text="Amount:"/>
-    <TextField editable="false" layoutX="546.0" layoutY="114.0" prefHeight="26.0" prefWidth="69.0"
-               style="-fx-background-color: 1111;" text="Amount:"/>
+    <TextField editable="false" layoutX="32.0" layoutY="53.0" prefHeight="26.0" prefWidth="76.0" style="-fx-background-color: 1111;" text="Currency 1:" />
+    <ChoiceBox fx:id="currency1" layoutX="40.0" layoutY="79.0" onAction="#handleChoiceBoxOne" prefHeight="25.0" prefWidth="124.0" />
+    <ChoiceBox fx:id="currency2" layoutX="484.0" layoutY="79.0" onAction="#handleChoiceBoxTwo" prefHeight="25.0" prefWidth="124.0" />
+    <TextField editable="false" layoutX="532.0" layoutY="53.0" prefHeight="26.0" prefWidth="76.0" style="-fx-background-color: 11111;" text="Currency 2:" />
+    <TextField editable="false" layoutX="36.0" layoutY="114.0" prefHeight="26.0" prefWidth="69.0" style="-fx-background-color: 1111;" text="Amount:" />
+    <TextField editable="false" layoutX="546.0" layoutY="114.0" prefHeight="26.0" prefWidth="69.0" style="-fx-background-color: 1111;" text="Amount:" />
     <LineChart fx:id="graph" layoutX="194.0" layoutY="202.0" prefHeight="165.0" prefWidth="254.0" title="Recent Trends">
         <xAxis>
-            <CategoryAxis side="BOTTOM"/>
+            <CategoryAxis side="BOTTOM" />
         </xAxis>
         <yAxis>
-            <NumberAxis side="LEFT"/>
+            <NumberAxis side="LEFT" />
         </yAxis>
     </LineChart>
-    <TextField fx:id="textfield1" layoutX="40.0" layoutY="134.0" onKeyTyped="#handleTextFieldOne"/>
-    <TextField fx:id="textfield2" layoutX="458.0" layoutY="134.0" onKeyTyped="#handleTextFieldTwo"/>
+    <TextField fx:id="textfield1" layoutX="40.0" layoutY="134.0" onKeyTyped="#handleTextFieldOne" promptText="0.0" />
+    <TextField fx:id="textfield2" layoutX="458.0" layoutY="134.0" onKeyTyped="#handleTextFieldTwo" promptText="0.0" />
 </AnchorPane>
