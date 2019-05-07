@@ -3,6 +3,7 @@ package com.beyondbell.currencyconverter
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
 import javafx.scene.Scene
+import javafx.scene.control.ChoiceBox
 import javafx.scene.control.TextField
 import javafx.scene.input.KeyEvent
 import javafx.stage.Stage
@@ -36,4 +37,12 @@ internal class CurrencyConverter : Application() {
 			field.positionCaret(field.text.length)
 		}
 	}
+
+	lateinit var choicebox1: ChoiceBox<String>
+	fun loadChoiceBoxOne() {
+		
+	}
+
+	lateinit var choicebox2: ChoiceBox<String>
+
 }
