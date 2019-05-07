@@ -35,14 +35,14 @@ internal class CurrencyConverter : Application() {
 			currencies.add(it.name)
 		}
 
-		GlobalScope.launch (Dispatchers.JavaFx){
+		GlobalScope.launch(Dispatchers.JavaFx) {
 			while (!this@CurrencyConverter::currency1.isInitialized) {
 				delay(10)
 			}
 			currency1.items.addAll(currencies)
 			currency1.value = currency1.items[0]
 		}
-		GlobalScope.launch (Dispatchers.JavaFx){
+		GlobalScope.launch(Dispatchers.JavaFx) {
 			while (!this@CurrencyConverter::currency2.isInitialized) {
 				delay(10)
 			}
@@ -58,7 +58,7 @@ internal class CurrencyConverter : Application() {
 
 	fun handleTextFieldOne(keyEvent: KeyEvent) {
 		val field = keyEvent.target as TextField
-		if (field.text.toDoubleOrNull() == null  || keyEvent.character == "d" || keyEvent.character == "f") {
+		if (field.text.toDoubleOrNull() == null || keyEvent.character == "d" || keyEvent.character == "f") {
 			field.text = field.text.dropLast(1)
 			field.positionCaret(field.text.length)
 		} else {
@@ -85,8 +85,10 @@ internal class CurrencyConverter : Application() {
 	}
 
 	private fun handleChoiceBox() {
-		val input = currency1.value.also { println(it) }
-		val output = currency2.value.also { println(it) }
+		graph.animated = false
+
+		val input = currency1.value
+		val output = currency2.value
 
 		if (input == null || output == null) return
 
