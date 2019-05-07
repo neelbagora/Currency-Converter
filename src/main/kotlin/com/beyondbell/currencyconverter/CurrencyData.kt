@@ -14,12 +14,6 @@ internal object CurrencyData {
 
 	private val data = HashMap<Year, Rates>()
 
-	init {
-		println(year.toString().padStart(4, '0') +
-				"-${month.toString().padStart(2, '0')}" +
-				"-${day.toString().padStart(2, '0')}")
-	}
-
 	operator fun get(yearsBack: Int = 0) = data.getOrPut(year - yearsBack) {
 		if (yearsBack == 0) {
 			runBlocking {
