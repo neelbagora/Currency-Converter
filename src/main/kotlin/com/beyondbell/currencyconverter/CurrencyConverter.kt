@@ -117,8 +117,8 @@ internal class CurrencyConverter : Application() {
 		}
 
 		series.data.clear()
-		repeat(10) {
-			val data = CurrencyData[9 - it]
+		repeat(2) {
+			val data = CurrencyData[1 - it]
 			val reflectedGetters = data.first::class.memberProperties
 			val reflectedInput = reflectedGetters.first { it.name == input }.getter.call(data.first) as Double
 			val reflectedOutput = reflectedGetters.first { it.name == output }.getter.call(data.first) as Double
