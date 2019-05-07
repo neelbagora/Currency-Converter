@@ -9,13 +9,6 @@ import io.ktor.client.request.parameter
 /**
  * @param date YYYY-MM-DD
  */
-internal suspend fun requestRates(date: String = "latest"): Rates {
-	val response = client.get<RatesResponse>("$API/$date") {
-		parameter("access_key", KEY)
-	}
-	if (response.success) {
-		return response.rates!!
-	} else {
-		error("Failed API Request for $date!")
-	}
-}
+internal suspend fun requestRates(date: String = "latest") = client.get<RatesResponse>("$API/$date") {
+	parameter("access_key", KEY)
+}.rates ?: error("Failed API Request for $date!")
