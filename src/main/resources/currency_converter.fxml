@@ -34,6 +34,6 @@
       <TextField editable="false" layoutX="470.0" layoutY="367.0" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: 1111;" text="Last Updated: " />
       <TextField fx:id="date" editable="false" layoutX="557.0" layoutY="367.0" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: 1111;" text="null" />
       <TextField fx:id="textfield1" onKeyTyped="#handleTextFieldOne" layoutX="40.0" layoutY="134.0" />
-      <TextField fx:id="textfield2" layoutX="458.0" layoutY="134.0" />
+      <TextField fx:id="textfield2" onKeyTyped="#handleTextFieldTwo" layoutX="458.0" layoutY="134.0" />
    </children>
 </AnchorPane>

@@ -20,7 +20,18 @@ internal class CurrencyConverter : Application() {
 	fun handleTextFieldOne(keyEvent: KeyEvent) {
 		val field = keyEvent.target as TextField
 		println(field.text)
-		if (field.text.toDoubleOrNull() == null) {
+		if (field.text.toDoubleOrNull() == null  || keyEvent.character == "d" || keyEvent.character == "f") {
+			field.text = field.text.dropLast(1)
+			field.positionCaret(field.text.length)
+		}
+	}
+
+	lateinit var textfield2: TextField
+
+	fun handleTextFieldTwo(keyEvent: KeyEvent) {
+		val field = keyEvent.target as TextField
+		println(field.text)
+		if (field.text.toDoubleOrNull() == null || keyEvent.character == "d" || keyEvent.character == "f") {
 			field.text = field.text.dropLast(1)
 			field.positionCaret(field.text.length)
 		}
