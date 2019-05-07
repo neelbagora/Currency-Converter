@@ -51,11 +51,13 @@ internal class CurrencyConverter : Application() {
 		}
 	}
 
+	@Synchronized
 	override fun start(primaryStage: Stage) {
 		primaryStage.scene = Scene(FXMLLoader(javaClass.getResource("/currency_converter.fxml")).load())
 		primaryStage.show()
 	}
 
+	@Synchronized
 	fun handleTextFieldOne(keyEvent: KeyEvent) {
 		val field = textfield1
 		if (field.text.toDoubleOrNull() == null || keyEvent.character == "d" || keyEvent.character == "f") {
@@ -66,6 +68,7 @@ internal class CurrencyConverter : Application() {
 		}
 	}
 
+	@Synchronized
 	fun handleTextFieldTwo(keyEvent: KeyEvent) {
 		val field = textfield2
 		if (field.text.toDoubleOrNull() == null || keyEvent.character == "d" || keyEvent.character == "f") {
@@ -76,19 +79,21 @@ internal class CurrencyConverter : Application() {
 		}
 	}
 
+	@Synchronized
 	private fun updateInput() {
 		val output = textfield2.text.toIntOrNull() ?: 1
 		val ratio = graph.data.first().data.last().YValueProperty().get()
 		textfield1.text = (output / ratio).toString()
 	}
 
+	@Synchronized
 	private fun updateOutput() {
 		val input = textfield1.text.toIntOrNull() ?: 1
 		val ratio = graph.data.first().data.last().YValueProperty().get()
 		textfield2.text = (input * ratio).toString()
 	}
 
-
+	@Synchronized
 	fun handleChoiceBoxOne() {
 		handleChoiceBox()
 		if (graph.data.firstOrNull()?.data?.lastOrNull() != null) {
@@ -96,6 +101,7 @@ internal class CurrencyConverter : Application() {
 		}
 	}
 
+	@Synchronized
 	fun handleChoiceBoxTwo() {
 		handleChoiceBox()
 		if (graph.data.firstOrNull()?.data?.lastOrNull() != null) {
@@ -103,6 +109,7 @@ internal class CurrencyConverter : Application() {
 		}
 	}
 
+	@Synchronized
 	private fun handleChoiceBox() {
 		graph.animated = false
 
