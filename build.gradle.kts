@@ -18,6 +18,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-javafx:1.2.1")
     implementation("io.ktor:ktor-client-apache:1.1.5")
     implementation("io.ktor:ktor-client-json:1.1.5")
     implementation("io.ktor:ktor-client-json-jvm:1.1.5")

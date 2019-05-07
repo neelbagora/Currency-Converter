@@ -9,7 +9,7 @@ import io.ktor.client.request.parameter
 /**
  * @param date YYYY-MM-DD
  */
-internal suspend fun requestRates(date: String = "rates"): Rates {
+internal suspend fun requestRates(date: String = "latest"): Rates {
 	val response = client.get<RatesResponse>("$API/$date") {
 		parameter("access_key", KEY)
 	}
